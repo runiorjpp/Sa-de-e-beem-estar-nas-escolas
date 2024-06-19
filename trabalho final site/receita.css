@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(72deg, #eaebee 35%, #a0afe2, #f2f2f5 99%);
+}
+
+.content {
+    height: 520px;
+    width: 935px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.content .slide img {
+    height: 100%;
+    width: 100%;
+}
+
+.navigation {
+    position: absolute;
+    bottom: 160px;
+    left: 850px;
+    display: flex;
+}
+
+.bar {
+    width: 15px;
+    height: 15px;
+    border: 2px solid white;
+    margin: 6px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.bar:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+input {
+    display: none;
+}
+
+.slides {
+    display: flex;
+    width: 600%; 
+    height: 100%;
+}
+
+.slide {
+    width: 16.6667%; 
+    transition: 0.6s;
+}
+
+#slide1:checked ~ .s1 {
+    margin-left: 0;
+}
+
+#slide2:checked ~ .s1 {
+    margin-left: -16.6667%; 
+}
+
+#slide3:checked ~ .s1 {
+    margin-left: -33.3334%; 
+}
+
+#slide4:checked ~ .s1 {
+    margin-left: -50%; 
+}
+
+#slide5:checked ~ .s1 {
+    margin-left: -66.6667%; 
+}
+
+#slide6:checked ~ .s1 {
+    margin-left: -83.3333%;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #28ac5b;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+button:hover {
+    color: white;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, green, yellow, green, yellow);
+    background-size: 200% 200%;
+    border-radius: 7px;
+    z-index: -1;
+    animation: border-rotate 2s linear infinite;
+}
+
+@keyframes border-rotate {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
+.slide.s6 .back-button {
+    position: absolute;
+    bottom: 20px; 
+    left: 50%;
+    transform: translateX(-50%);
+}
